@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!--
+	<script type="text/JavaScript">
+        function timeRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);", timeoutPeriod);
+        }
+    </script>
+-->
+</head>
+<body>
+   dev_uid = {{input_uid}}
+    <!--<a href="javascript:location.reload(true);">Refresh this page</a>-->
+<!--
+<body onLoad="JavaScript:timeRefresh(2000);"> -->
+   <!--<h3>This page will auto refresh after 5 seconds.</h3>-->
+
+<!--<th width="46%" style="text-align:center;">zynq info</th>
+<th width="46%" style="text-align:center;" ><font color="#0000FF">zynq info</font></th>-->
+<h3 align="left" style="color:blue;">zynq info</h3>
+<table id = "zynqInfoTable" width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+	</tr>
+    <tr>
+		<td width="100" class = "zynq_cpu_usage" ></td>
+        <td width="100" class = "zynq_mem_usage" ></td>
+		<td width="100" class = "zynq_ip" ></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_1 info</h3>
+<table id = "rk_1_InfoTable" width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+    <tr>
+        <td class = "rk_1_cpu_usage" ></td>
+        <td class = "rk_1_mem_usage"></td>
+		<td class = "rk_1_ip"></td>
+		<td class = "rk_1_gpu_usage"></td>
+		<td class = "rk_1_cpu_temp"></td>
+		<td class = "rk_1_gpu_temp"></td>
+	</tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_2 info</h3>
+<table id = "rk_2_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_2_cpu_usage"></td>
+        <td class = "rk_2_mem_usage"></td>
+		<td class = "rk_2_ip"></td>
+		<td class = "rk_2_gpu_usage"></td>
+		<td class = "rk_2_cpu_temp"></td>
+		<td class = "rk_2_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_3 info</h3>
+<table id = "rk_3_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_3_cpu_usage"></td>
+        <td class = "rk_3_mem_usage"></td>
+		<td class = "rk_3_ip"></td>
+		<td class = "rk_3_gpu_usage"></td>
+		<td class = "rk_3_cpu_temp"></td>
+		<td class = "rk_3_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_4 info</h3>
+<table id = "rk_4_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_4_cpu_usage"></td>
+        <td class = "rk_4_mem_usage"></td>
+		<td class = "rk_4_ip"></td>
+		<td class = "rk_4_gpu_usage"></td>
+		<td class = "rk_4_cpu_temp"></td>
+		<td class = "rk_4_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_5 info</h3>
+<table id = "rk_5_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_5_cpu_usage"></td>
+        <td class = "rk_5_mem_usage"></td>
+		<td class = "rk_5_ip"></td>
+		<td class = "rk_5_gpu_usage"></td>
+		<td class = "rk_5_cpu_temp"></td>
+		<td class = "rk_5_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_6 info</h3>
+<table id = "rk_6_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_6_cpu_usage"></td>
+        <td class = "rk_6_mem_usage"></td>
+		<td class = "rk_6_ip"></td>
+		<td class = "rk_6_gpu_usage"></td>
+		<td class = "rk_6_cpu_temp"></td>
+		<td class = "rk_6_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_7 info</h3>
+<table id = "rk_7_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_7_cpu_usage"></td>
+        <td class = "rk_7_mem_usage"></td>
+		<td class = "rk_7_ip"></td>
+		<td class = "rk_7_gpu_usage"></td>
+		<td class = "rk_7_cpu_temp"></td>
+		<td class = "rk_7_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_8 info</h3>
+<table id = "rk_8_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_8_cpu_usage"></td>
+        <td class = "rk_8_mem_usage"></td>
+		<td class = "rk_8_ip"></td>
+		<td class = "rk_8_gpu_usage"></td>
+		<td class = "rk_8_cpu_temp"></td>
+		<td class = "rk_8_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_9 info</h3>
+<table id = "rk_9_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_9_cpu_usage"></td>
+        <td class = "rk_9_mem_usage"></td>
+		<td class = "rk_9_ip"></td>
+		<td class = "rk_9_gpu_usage"></td>
+		<td class = "rk_9_cpu_temp"></td>
+		<td class = "rk_9_gpu_temp"></td>
+    </tr>
+</table>
+
+<h3 align="left" style="color:blue;">rk_10 info</h3>
+<table id = "rk_10_InfoTable"  width="1000" border="1">
+	<tr>
+		<th>CPU 使用率</th>
+		<th>内存使用率</th>
+		<th>IP 地址</th>
+		<th>GPU 使用率</th>
+		<th>CPU 温度</th>
+		<th>GPU 温度</th>
+	</tr>
+	<tr>
+        <td class = "rk_10_cpu_usage"></td>
+        <td class = "rk_10_mem_usage"></td>
+		<td class = "rk_10_ip"></td>
+		<td class = "rk_10_gpu_usage"></td>
+		<td class = "rk_10_cpu_temp"></td>
+		<td class = "rk_10_gpu_temp"></td>
+    </tr>
+</table>
+<br></br>
+
+<script language="javascript" type="text/javascript">
+	$(function runEvery10Sec() {
+		setTimeout(runEvery10Sec, 1000 * 5 );
+
+		$.ajax({
+			type: "POST",
+			async: false,
+			dataType:"json",
+			url: "/updataDevInfo/{{input_uid}}",
+			success: function(data){
+				// var mem = data.cpu_usage;
+				// var obj2 = JSON.parse(data);
+				// console.log(obj2);
+				// var list = data.zynq_cpu_usage;
+				console.log(data);
+				// cpu_usage = list
+
+
+				// $("#zynqInfoTable").find("tr:first").find("td:eq(3)").text(list)
+				$("#zynqInfoTable").find("td.zynq_cpu_usage").text(data['zynq']['cpu_usage']);
+				$("#zynqInfoTable").find("td.zynq_mem_usage").text(data['zynq']['mem_usage']);
+				$("#zynqInfoTable").find("td.zynq_ip").text(data['zynq']['ip']);
+
+				$("#rk_1_InfoTable").find("td.rk_1_cpu_usage").text(data['rk'][0]['cpu_usage']);
+				$("#rk_1_InfoTable").find("td.rk_1_mem_usage").text(data['rk'][0]['mem_usage']);
+				$("#rk_1_InfoTable").find("td.rk_1_ip").text(data['rk'][0]['ip']);
+				$("#rk_1_InfoTable").find("td.rk_1_gpu_usage").text(data['rk'][0]['gpu_usage']);
+				$("#rk_1_InfoTable").find("td.rk_1_cpu_temp").text(data['rk'][0]['cpu_temp']);
+				$("#rk_1_InfoTable").find("td.rk_1_gpu_temp").text(data['rk'][0]['gpu_temp']);
+
+				$("#rk_2_InfoTable").find("td.rk_2_cpu_usage").text(data['rk'][1]['cpu_usage']);
+				$("#rk_2_InfoTable").find("td.rk_2_mem_usage").text(data['rk'][1]['mem_usage']);
+				$("#rk_2_InfoTable").find("td.rk_2_ip").text(data['rk'][1]['ip']);
+				$("#rk_2_InfoTable").find("td.rk_2_gpu_usage").text(data['rk'][1]['gpu_usage']);
+				$("#rk_2_InfoTable").find("td.rk_2_cpu_temp").text(data['rk'][1]['cpu_temp']);
+				$("#rk_2_InfoTable").find("td.rk_2_gpu_temp").text(data['rk'][1]['gpu_temp']);
+
+				$("#rk_3_InfoTable").find("td.rk_3_cpu_usage").text(data['rk'][2]['cpu_usage']);
+				$("#rk_3_InfoTable").find("td.rk_3_mem_usage").text(data['rk'][2]['mem_usage']);
+				$("#rk_3_InfoTable").find("td.rk_3_ip").text(data['rk'][2]['ip']);
+				$("#rk_3_InfoTable").find("td.rk_3_gpu_usage").text(data['rk'][2]['gpu_usage']);
+				$("#rk_3_InfoTable").find("td.rk_3_cpu_temp").text(data['rk'][2]['cpu_temp']);
+				$("#rk_3_InfoTable").find("td.rk_3_gpu_temp").text(data['rk'][2]['gpu_temp']);
+
+				$("#rk_4_InfoTable").find("td.rk_4_cpu_usage").text(data['rk'][3]['cpu_usage']);
+				$("#rk_4_InfoTable").find("td.rk_4_mem_usage").text(data['rk'][3]['mem_usage']);
+				$("#rk_4_InfoTable").find("td.rk_4_ip").text(data['rk'][3]['ip']);
+				$("#rk_4_InfoTable").find("td.rk_4_gpu_usage").text(data['rk'][3]['gpu_usage']);
+				$("#rk_4_InfoTable").find("td.rk_4_cpu_temp").text(data['rk'][3]['cpu_temp']);
+				$("#rk_4_InfoTable").find("td.rk_4_gpu_temp").text(data['rk'][3]['gpu_temp']);
+
+				$("#rk_5_InfoTable").find("td.rk_5_cpu_usage").text(data['rk'][4]['cpu_usage']);
+				$("#rk_5_InfoTable").find("td.rk_5_mem_usage").text(data['rk'][4]['mem_usage']);
+				$("#rk_5_InfoTable").find("td.rk_5_ip").text(data['rk'][4]['ip']);
+				$("#rk_5_InfoTable").find("td.rk_5_gpu_usage").text(data['rk'][4]['gpu_usage']);
+				$("#rk_5_InfoTable").find("td.rk_5_cpu_temp").text(data['rk'][4]['cpu_temp']);
+				$("#rk_5_InfoTable").find("td.rk_5_gpu_temp").text(data['rk'][4]['gpu_temp']);
+
+				$("#rk_6_InfoTable").find("td.rk_6_cpu_usage").text(data['rk'][5]['cpu_usage']);
+				$("#rk_6_InfoTable").find("td.rk_6_mem_usage").text(data['rk'][5]['mem_usage']);
+				$("#rk_6_InfoTable").find("td.rk_6_ip").text(data['rk'][5]['ip']);
+				$("#rk_6_InfoTable").find("td.rk_6_gpu_usage").text(data['rk'][5]['gpu_usage']);
+				$("#rk_6_InfoTable").find("td.rk_6_cpu_temp").text(data['rk'][5]['cpu_temp']);
+				$("#rk_6_InfoTable").find("td.rk_6_gpu_temp").text(data['rk'][5]['gpu_temp']);
+
+				$("#rk_7_InfoTable").find("td.rk_7_cpu_usage").text(data['rk'][6]['cpu_usage']);
+				$("#rk_7_InfoTable").find("td.rk_7_mem_usage").text(data['rk'][6]['mem_usage']);
+				$("#rk_7_InfoTable").find("td.rk_7_ip").text(data['rk'][6]['ip']);
+				$("#rk_7_InfoTable").find("td.rk_7_gpu_usage").text(data['rk'][6]['gpu_usage']);
+				$("#rk_7_InfoTable").find("td.rk_7_cpu_temp").text(data['rk'][6]['cpu_temp']);
+				$("#rk_7_InfoTable").find("td.rk_7_gpu_temp").text(data['rk'][6]['gpu_temp']);
+
+				$("#rk_8_InfoTable").find("td.rk_8_cpu_usage").text(data['rk'][7]['cpu_usage']);
+				$("#rk_8_InfoTable").find("td.rk_8_mem_usage").text(data['rk'][7]['mem_usage']);
+				$("#rk_8_InfoTable").find("td.rk_8_ip").text(data['rk'][7]['ip']);
+				$("#rk_8_InfoTable").find("td.rk_8_gpu_usage").text(data['rk'][7]['gpu_usage']);
+				$("#rk_8_InfoTable").find("td.rk_8_cpu_temp").text(data['rk'][7]['cpu_temp']);
+				$("#rk_8_InfoTable").find("td.rk_8_gpu_temp").text(data['rk'][7]['gpu_temp']);
+
+				$("#rk_9_InfoTable").find("td.rk_9_cpu_usage").text(data['rk'][8]['cpu_usage']);
+				$("#rk_9_InfoTable").find("td.rk_9_mem_usage").text(data['rk'][8]['mem_usage']);
+				$("#rk_9_InfoTable").find("td.rk_9_ip").text(data['rk'][8]['ip']);
+				$("#rk_9_InfoTable").find("td.rk_9_gpu_usage").text(data['rk'][8]['gpu_usage']);
+				$("#rk_9_InfoTable").find("td.rk_9_cpu_temp").text(data['rk'][8]['cpu_temp']);
+				$("#rk_9_InfoTable").find("td.rk_9_gpu_temp").text(data['rk'][8]['gpu_temp']);
+
+				$("#rk_10_InfoTable").find("td.rk_10_cpu_usage").text(data['rk'][9]['cpu_usage']);
+				$("#rk_10_InfoTable").find("td.rk_10_mem_usage").text(data['rk'][9]['mem_usage']);
+				$("#rk_10_InfoTable").find("td.rk_10_ip").text(data['rk'][9]['ip']);
+				$("#rk_10_InfoTable").find("td.rk_10_gpu_usage").text(data['rk'][9]['gpu_usage']);
+				$("#rk_10_InfoTable").find("td.rk_10_cpu_temp").text(data['rk'][9]['cpu_temp']);
+				$("#rk_10_InfoTable").find("td.rk_10_gpu_temp").text(data['rk'][9]['gpu_temp']);
+				// $("#tab").append("<tr id='tr'"+index+"><td>"+data.name+"</td></tr>"']);
+
+				// html.push("<tr><td>" + data["cpu_usage"] + "</td>"']);
+				// html.push("<td>" + data["mem_usage"] + "</td>"']);
+				// html.push("<td>" + data["current_ip"] + "</td></tr>"']);
+				// for (var i = 1; i < 11; i++)
+				// {
+				// 	var i_as_string = i + "";
+				// 	// var rk_cpu_usage = "rk_" + i_as_string +  "cpu_usage";
+				// 	var tmp_table = "#rk_" + i_as_string +  "_InfoTable";
+				// 	var tmp_find = "td." + "rk_" + i_as_string +  "_cpu_usage";
+				// 	var tmp_text = "data." + "rk_" + i_as_string +  "_cpu_usage";
+
+
+				// 	// $(tmp_table).find(tmp_find).text(tmp_text);
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+				// // 	// $("#rk_" + i_as_string + "_InfoTable").find("td.zynq_cpu_usage").text(data.zynq_cpu_usage)
+
+				// }
+
+
+			},
+			error: function(xhr, type){
+			}
+		});
+
+	})
+</script>
+
+<!--
+<script>
+    runEvery10Sec()
+</script>
+-->
+</body>
+</html>
